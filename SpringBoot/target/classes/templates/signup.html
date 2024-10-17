@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div>
+        <h1>Sign in</h1>
+    </div>
+    <div class="form-container">
+<form th:action="@{/signin}" th:object="${user}" method="post">
+
+
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username"    th:field="*{username}" />
+    </div>
+    <div>
+        <label for="phonenumber">Phonenumber:</label>
+        <input type="text" id="phonenumber"    th:field="*{phonenumber}" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email"    th:field="*{email}" />
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input type="text" id="password" th:field="*{password}" />
+    </div>
+    <button type="submit">Login</button>
+    <p th:text="${error}"></p>
+    <p>Already have an account? <a th:href="@{/login}">Log in</a></p>
+
+
+</form>
+
+    </div></div>
+</body>
+</html>

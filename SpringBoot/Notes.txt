@@ -1,0 +1,55 @@
+Summary Table
+Feature	                       spring-web	                            spring-boot-starter-web
+Basic Web Components	✔️ (manual setup)	                     ✔️ (auto-configured)
+Embedded Server	        ❌ (requires external server setup)	     ✔️ (comes with Tomcat, Jetty, or Undertow)
+Auto-configuration	    ❌	                                     ✔️
+REST API Development	✔️	                                     ✔️ (simplified with Jackson auto-config)
+Spring Boot Features	❌	                                     ✔️ (with simplified setup and Spring Boot support)
+
+
+Topics to Cover
+
+Transactional Annotation
+
+
+
+
+JPA entity
+
+@Entity
+@Table(name="")
+@Column(name="")
+@Transient - fields won't persist to table
+
+
+
+Use "Integer" instead of "int" in entities
+Default value of int is 0 and Integer is "null"
+In row insertion  JPA checks the table with the ID value, if it is 0(default)- it won't find it
+but if Id is null , insertion occurs
+
+
+Spring framework
+  Entity manager -manual setup
+     - LocalEntityManagerFactoryBean / LocalContainerEntityManagerFactoryBean
+  DataSource bean
+     - configuration of datasource
+  DataSource, EntityManagerFactory, and TransactionManager
+   OR
+   Configuration With XML
+
+
+
+Spring Boot configures Hibernate as the default JPA provider.
+ also auto-configure the dataSource bean, depending on the database we’re using.
+
+ JPA entity relationships
+ One to one
+ One to Many  - add foreign key in the many side ( Join column)
+ Many to one - add foreign key in the many side ( Join column)
+ Many to Many - use Joint Table
+
+ use onetomany in the list member
+ use manytoone in the single entity
+
+
