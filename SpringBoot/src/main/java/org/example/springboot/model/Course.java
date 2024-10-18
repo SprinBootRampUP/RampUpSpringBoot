@@ -14,13 +14,18 @@ import java.util.List;
 
 @Entity
 @Data
+@Table(name = "Course")
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(unique = true)
+    @Basic(optional = false)
+
     private String title;
+
+    @Column( columnDefinition = "VARCHAR(255) default 'Welcome to my course'")
     private String description;
 
     @Enumerated(EnumType.STRING)
