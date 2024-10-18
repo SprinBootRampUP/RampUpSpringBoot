@@ -1,5 +1,6 @@
 package org.example.springboot.service;
 
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.example.springboot.model.Course;
 import org.example.springboot.repository.CourseRepository;
@@ -18,15 +19,13 @@ public class CourseService {
         return courseRepository.findByAuthorsId(authorId);
     }
 
-
+    @Transactional
     public void addCourseWithSections( Course course) {
 
       //  return
         //System.out.println("HIIIIIII"+course.toString());
-        log.info("Hiiii", course.toString(),course.getSections().toString());
+        log.info( course.toString(),course.getSections().toString());
                 courseRepository.save(course);
-
-
     }
 
 

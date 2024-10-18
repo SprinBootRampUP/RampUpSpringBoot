@@ -6,6 +6,8 @@ import org.example.springboot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -17,11 +19,9 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public boolean login(String email, String password) {
-        if (userRepository.findByEmailAndPassword(email, password) != null) {
-            return true;
-        }
-        return false;
+    public Optional<User> login(String email, String password) {
+
+        return userRepository.findByEmailAndPassword(email, password);
     }
 
 

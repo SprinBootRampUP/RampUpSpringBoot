@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Lecture {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
 
@@ -22,7 +22,7 @@ public class Lecture {
     private Section section;
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "resource_id" )
     private Resource resource;
 

@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Optional;
+
 @Controller
 public class UserController {
 
@@ -34,11 +36,27 @@ public class UserController {
         System.out.println(user.getEmail());
         System.out.println(user.getPassword());
 
-        if(userService.login(user.getEmail(), user.getPassword())){
-            return "redirect:/home";
-        }
-        model.addAttribute("error", "Invalid username or password");
-        return "login";
+       Optional<User> currentUser= userService.login(user.getEmail(), user.getPassword());
+
+        return  currentUser.map(
+               (user1) -> "redirect:/home"
+               )
+               .orElseGet(
+                       () ->{
+           model.addAttribute("error", "Invalid username or password");
+           return "login";
+       });
+
+//
+//       if(currentUser.isPresent()){
+//           return "redirect:/home";
+//       }
+
+//        if(userService.login(user.getEmail(), user.getPassword())){
+//            return "redirect:/home";
+//        }
+//        model.addAttribute("error", "Invalid username or password");
+//        return "login";
 
     }
 

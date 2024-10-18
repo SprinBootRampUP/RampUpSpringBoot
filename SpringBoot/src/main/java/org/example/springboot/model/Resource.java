@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Resource {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String name;
     private int size;

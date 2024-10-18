@@ -1,8 +1,11 @@
 package org.example.springboot.Dtos;
 
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class AuthorDto {
 
 

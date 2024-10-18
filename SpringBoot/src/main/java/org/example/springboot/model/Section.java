@@ -10,10 +10,11 @@ import java.util.List;
 
 @Entity
 @Data
+@Table(name ="section")
 public class Section {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
     private String orderNumber;
@@ -23,7 +24,7 @@ public class Section {
     private Course course;
 
 
-    @OneToMany(mappedBy = "section" )
+    @OneToMany(mappedBy = "section",cascade = CascadeType.ALL )
     private List<Lecture> lectures;
 
     @Override
