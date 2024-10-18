@@ -18,17 +18,17 @@ public class LoggingAspect {
     @Pointcut("execution(   * org.example.springboot.*.*.*(..))")
     public void PointCutMethod(){}
 
-    @Before("PointCutMethod()")
-    public void logBefore(JoinPoint joinPoint) {
-
-        logger.info(joinPoint.getSignature().getName());
-        Object[] args = joinPoint.getArgs();
-        for (Object arg : args) {
-            logger.info(arg.toString());
-        }
-
-
-    }
+//    @Before("PointCutMethod()")
+//    public void logBefore(JoinPoint joinPoint) {
+//
+//        logger.info(joinPoint.getSignature().getName());
+//        Object[] args = joinPoint.getArgs();
+//        for (Object arg : args) {
+//            logger.info(arg.toString());
+//        }
+//
+//
+//    }
 
 
 

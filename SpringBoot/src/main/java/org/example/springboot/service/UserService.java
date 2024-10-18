@@ -6,6 +6,7 @@ import org.example.springboot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Service
@@ -25,12 +26,8 @@ public class UserService {
     }
 
 
-    public boolean save(User user) {
-        if (userRepository.findByEmail(user.getEmail()) != null) {
-            return false;
-        }
-        userRepository.save(user);
-        return true;
+    public User save(@Valid  User user) {
+       return userRepository.save(user);
     }
 
     public void sample(){
