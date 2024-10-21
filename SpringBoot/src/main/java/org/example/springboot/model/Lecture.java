@@ -1,6 +1,8 @@
 package org.example.springboot.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,11 +21,13 @@ public class Lecture {
 
     @ManyToOne
     @JoinColumn( name = "section_id")
+    @JsonBackReference
     private Section section;
 
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "resource_id" )
+    @JsonManagedReference
     private Resource resource;
 
     @Override
