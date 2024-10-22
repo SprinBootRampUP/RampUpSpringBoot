@@ -67,4 +67,24 @@ public class CourseController {
     }
 
 
+    @GetMapping("/getCoursesByPage")
+    public ResponseEntity< ApiResponse> getCoursesByPage(@RequestParam(defaultValue = "0") int pageNo, @RequestParam(defaultValue = "3") int pageCount ,@RequestParam(defaultValue = "title") String sortBy ,@RequestParam(defaultValue = "ASC") String sortOrder  ){
+
+        try{
+            List<Course> co=courseService.getCoursesByPages(pageNo,pageCount,sortBy,sortOrder);
+
+            return  ResponseEntity.ok( new ApiResponse("Courses Fetched Successfully" , co));
+
+//            Map<String,List<Course>> res= new HashMap<>();
+//            res.put( "data" , co );
+//            return ResponseEntity.ok( res);
+//            //return  res;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
 }

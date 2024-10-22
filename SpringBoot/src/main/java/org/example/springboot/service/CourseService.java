@@ -11,6 +11,10 @@ import org.example.springboot.model.Resource;
 import org.example.springboot.model.Section;
 import org.example.springboot.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -84,5 +88,17 @@ public class CourseService {
     public  List<Course>  getCourses(){
               return courseRepository.findAll();
     }
+
+    public  List<Course> getCoursesByPages(int pageNo, int pageCount ,String sortBy,String sortOrder){
+        //Pageable pageable = PageRequest.of(pageNo,pageCount);
+        Sort.Direction sortdirection= sortOrder.equalsIgnoreCase("DESC") ? Sort.Direction.DESC : Sort.Direction.ASC;
+
+        Pageable pageable = PageRequest.of(pageNo,pageCount ,Sort.by(sortdirection,sortBy));
+//It will return  object of pages - so use .get() , .tolist()
+       return  courseRepository.findAll(pageable).get().toList();
+
+       //return courseRepository.findAll();
+    }
+
 
 }
