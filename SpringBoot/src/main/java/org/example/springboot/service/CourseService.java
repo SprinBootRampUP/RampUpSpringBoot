@@ -80,7 +80,7 @@ public class CourseService {
        // System.out.printf("qqqqqqqqq!!!!!!!!!!!" +c);
     }
 
-    @Transactional
+   // @Transactional
     public  List<Course>  getCourses(){
               return courseRepository.findAll();
     }
