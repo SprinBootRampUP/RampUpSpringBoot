@@ -12,6 +12,8 @@ import org.hibernate.Length;
 
 @Entity
 @Table(name = "Users")
+@SecondaryTable(name = "User_details", pkJoinColumns = @PrimaryKeyJoinColumn(name = "user_id"))
+
 //@Setter
 //@Getter
 @Data
@@ -26,9 +28,11 @@ public class User {
     @NotNull(message = "Username cannot be empty")
     private String userName;
 
+    @Column(table = "user_details")
     @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Phone number must be between 10 and 15 digits, optionally prefixed with '+'")
     private String phoneNumber;
 
+    @Column(table = "user_details")
     private String  email;
 
 

@@ -1,1 +1,2 @@
 org\example\springboot\controller\GlobalExceptionHandler.class
+org\example\springboot\model\BaseEntity.class

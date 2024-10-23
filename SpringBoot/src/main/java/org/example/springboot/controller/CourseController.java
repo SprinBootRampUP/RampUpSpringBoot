@@ -86,5 +86,20 @@ public class CourseController {
 
     }
 
+    @GetMapping("/search")
+    public ResponseEntity< ApiResponse> searchCourses(@RequestParam(defaultValue = " ") String title ){
+
+        try{
+            List<Course> courses=courseService.searchCourses(title);
+
+            return  ResponseEntity.ok( new ApiResponse("Courses Fetched Successfully" , courses));
+
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 }

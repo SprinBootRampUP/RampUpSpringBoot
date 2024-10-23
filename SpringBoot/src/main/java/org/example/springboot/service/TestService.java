@@ -41,18 +41,18 @@ public class TestService {
         authorRepository.save(author2);
 
         Course course1 = new Course();
-        course1.setId(31L);
+       // course1.setId(31L);
         course1.setTitle("course 1");
         course1.setDescription("Learn Spring Boot.");
 
         Course course2 = new Course();
-        course2.setId(32L);
+      //  course2.setId(32L);
         course2.setTitle("Course 2");
         course2.setDescription("Learn2");
 
 
         Course course3 = new Course();
-        course3.setId(33L);
+      //  course3.setId(33L);
         course3.setTitle("Course 3");
         course3.setDescription("Learn3");
 

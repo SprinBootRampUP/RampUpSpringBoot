@@ -3,27 +3,25 @@ package org.example.springboot.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.example.springboot.Enums.CourseLevel;
 
 import java.util.Date;
 import java.util.List;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 @Table(name = "Course")
-public class Course {
+@NamedQuery(
+        name = "Course.findByTitle",
+        query = "SELECT c FROM Course c WHERE c.title LIKE :title "
+)
+public class Course extends  BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
     @Column(unique = true)
     @Basic(optional = false)
-
     private String title;
 
     @Column( columnDefinition = "VARCHAR(255) default 'Welcome to my course'")
@@ -31,17 +29,8 @@ public class Course {
 
     @Enumerated(EnumType.STRING)
     private CourseLevel courseLevel;
+
     private String price;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-
-    public Course(){
-        this.createdAt = new Date();
-    }
-
-
-
 
     @ManyToMany
     @JoinTable(
@@ -62,6 +51,6 @@ public class Course {
     @Override
     public String toString() {
 
-        return "Course" + title + " "+ "id" + id + " "+description + "sec size " + sections.size() ;
+        return "" ;
     }
 }

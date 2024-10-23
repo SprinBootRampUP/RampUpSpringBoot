@@ -101,4 +101,14 @@ public class CourseService {
     }
 
 
+//    public  List<Course> searchCourses(String title){
+//        return  courseRepository.findCourseByTitleContainingIgnoreCase(title);
+//    }
+
+    public  List<Course> searchCourses(String title){
+        return  courseRepository.findCourseByTitleContainingIgnoreCase(title);
+       // return  courseRepository.findByTitle("%" +title +"%");
+
+    }
+
 }

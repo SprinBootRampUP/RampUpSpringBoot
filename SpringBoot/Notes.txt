@@ -52,4 +52,15 @@ Spring Boot configures Hibernate as the default JPA provider.
  use onetomany in the list member
  use manytoone in the single entity
 
+JPA
+Cascade types
+
+@EntityListeners annotation is used to configure AuditingEntityListener
+which contains the @PrePersist and @PreUpdate methods in order to capture auditing information
+
+
+Spring JDBC
+1.define datasource
+2.connect the datasource with the jdbctemplate
+3.execute queries using the jdbctemplate  example- jdbctemplate.update()  - jdbctemplate.query()
 
