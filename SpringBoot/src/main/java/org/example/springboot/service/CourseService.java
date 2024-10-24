@@ -14,19 +14,21 @@ import org.example.springboot.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Slf4j
 @Service
 public class CourseService {
 
-    @Autowired
+//    @Autowired
+//    private CourseRepository courseRepository;
+
+
+    @javax.annotation.Resource(name="CourseRepository")
     private CourseRepository courseRepository;
 
     @Autowired
@@ -38,7 +40,6 @@ public class CourseService {
 
     @Transactional
     public void addCourseWithSections( CourseDto courseDto) {
-
 
         Course course = new Course();
         course.setTitle(courseDto.getTitle());

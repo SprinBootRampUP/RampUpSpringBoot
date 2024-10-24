@@ -64,3 +64,7 @@ Spring JDBC
 2.connect the datasource with the jdbctemplate
 3.execute queries using the jdbctemplate  example- jdbctemplate.update()  - jdbctemplate.query()
 
+@Qualifier
+if a interface is implemented by 2 classes. and if we want to inject the interface
+spring will not know which implemtation of the class to inject.
+so use @Qualifier and specify the desired class

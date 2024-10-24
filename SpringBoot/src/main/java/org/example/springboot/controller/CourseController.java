@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,13 +24,17 @@ import java.util.Map;
 @RequestMapping("/courses")
 public class CourseController {
 
-    private final CourseService courseService;
+    @Inject
+    private  CourseService courseService;
 
     @Autowired
-    CourseController(CourseService courseService) {
-        // @Autowired
-        this.courseService = courseService;
-    }
+    private CourseService ss;
+
+//    @Autowired
+//    CourseController(CourseService courseService) {
+//        // @Autowired
+//        this.courseService = courseService;
+//    }
 
     @PostMapping
     public ResponseEntity<ApiResponse>  createCourse(@RequestBody CourseDto courseDto) {

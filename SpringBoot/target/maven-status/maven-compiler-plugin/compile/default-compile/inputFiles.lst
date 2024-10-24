@@ -2,8 +2,9 @@ C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\Application.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\CourseController.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\GlobalExceptionHandler.java
+C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\SampleController.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\UserController.java
-C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\DemoController.java
+C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\Demo.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\Dtos\ApiResponse.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\Dtos\AuthorDto.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\Dtos\CourseDto.java
@@ -26,5 +27,6 @@ C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\repository\UserRepository.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\AuthorService.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\CourseService.java
+C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\SampleService.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\TestService.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\UserService.java
