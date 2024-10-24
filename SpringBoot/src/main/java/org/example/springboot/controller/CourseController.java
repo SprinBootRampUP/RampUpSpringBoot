@@ -51,9 +51,9 @@ public class CourseController {
     public ResponseEntity< ApiResponse> getCourses(){
 
         try{
-            List<Course> co=courseService.getCourses();
+            List<CourseDto> courses=courseService.getCourses();
 
-            return  ResponseEntity.ok( new ApiResponse("Courses Fetched Successfully" , co));
+            return  ResponseEntity.ok( new ApiResponse("Courses Fetched Successfully" , courses));
 
 //            Map<String,List<Course>> res= new HashMap<>();
 //            res.put( "data" , co );
