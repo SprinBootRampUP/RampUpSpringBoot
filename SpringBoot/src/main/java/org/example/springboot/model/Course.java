@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.example.springboot.Enums.CourseLevel;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.Date;
 import java.util.List;
@@ -44,8 +46,9 @@ public class Course extends  BaseEntity {
     )
     private List<Author> authors;
 
-    @OneToMany(mappedBy = "course" ,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "course" ,cascade = CascadeType.ALL  )
     @JsonManagedReference
+    @Fetch(FetchMode.JOIN)
     private List<Section> sections;
 
     @Override
