@@ -1,5 +1,6 @@
 package org.example.springboot.controller;
 
+import jakarta.validation.Valid;
 import org.example.springboot.Dtos.ApiResponse;
 import org.example.springboot.Dtos.CourseDto;
 import org.example.springboot.Dtos.LectureDto;
@@ -37,7 +38,7 @@ public class CourseController {
 //    }
 
     @PostMapping
-    public ResponseEntity<ApiResponse>  createCourse(@RequestBody CourseDto courseDto) {
+    public ResponseEntity<ApiResponse>  createCourse( @Valid @RequestBody CourseDto courseDto) {
 
         try {
 

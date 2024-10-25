@@ -3,15 +3,20 @@ package org.example.springboot.controller;
 import org.example.springboot.model.User;
 import org.example.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
+@Validated
 public class UserController {
 
     //@Autowired
@@ -33,7 +38,12 @@ public class UserController {
 
 
     @PostMapping("/login")
-    public String login(@ModelAttribute("user") User user,Model model ){
+    public String login(@Valid User user, Model model, BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){
+            System.out.println("qqqqq");
+        }
+
         System.out.println(user.getEmail());
         System.out.println(user.getPassword());
 
@@ -63,26 +73,40 @@ public class UserController {
 
 
 
-    @PostMapping("/signin")
-public String signin(Model model ,User user){
-        userService.sample();
-        System.out.println("from signin"+user.getEmail());
-        System.out.println("from signin"+user.getPassword());
-        if(userService.save(user)){
-            return "redirect:/home";
-        }
-        model.addAttribute("error", "Email is already in use");
-        return "signup";
-    }
 
 
-    @GetMapping("/signin")
-    public String signin(Model model){
+    @GetMapping("/signup")
+    public String signup(Model model){
         model.addAttribute("user", new User());
         return "signup";
     }
 
 
+
+    @PostMapping("/signup")
+    public String signup(@Valid @ModelAttribute("user") User user , BindingResult bindingResult){
+        System.out.println("from signup"+user.getEmail());
+        System.out.println("from signup"+user.getPassword());
+        System.out.println("from signup"+user);
+
+        if(bindingResult.hasErrors()){
+
+            System.out.println("has error");
+            return "signup";
+        }
+        System.out.println("NO error");
+
+       // model.addAttribute("error", "No user");
+        return "redirect:/home";
+
+    }
+
+
+
+    @GetMapping("/summa")
+    public String summa(){
+        return "summa";
+    }
 
 
 }

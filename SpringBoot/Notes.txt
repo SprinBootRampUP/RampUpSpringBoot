@@ -1,15 +1,12 @@
 Summary Table
-Feature	                       spring-web	                            spring-boot-starter-web
-Basic Web Components	✔️ (manual setup)	                     ✔️ (auto-configured)
-Embedded Server	        ❌ (requires external server setup)	     ✔️ (comes with Tomcat, Jetty, or Undertow)
-Auto-configuration	    ❌	                                     ✔️
-REST API Development	✔️	                                     ✔️ (simplified with Jackson auto-config)
-Spring Boot Features	❌	                                     ✔️ (with simplified setup and Spring Boot support)
+Feature	                       spring-web	               | spring-boot-starter-web
+Basic Web Components	 (manual setup)	                    | (auto-configured)
+Embedded Server	         (requires external server setup)	 |    (comes with Tomcat, Jetty, or Undertow)
+Auto-configuration
+REST API Development		                                  |    (simplified with Jackson auto-config)
+Spring Boot Features                                    (with simplified setup and Spring Boot support)
 
 
-Topics to Cover
-
-Transactional Annotation
 
 
 

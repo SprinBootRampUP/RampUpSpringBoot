@@ -2,6 +2,7 @@ package org.example.springboot.Dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.example.springboot.Enums.CourseLevel;
 
