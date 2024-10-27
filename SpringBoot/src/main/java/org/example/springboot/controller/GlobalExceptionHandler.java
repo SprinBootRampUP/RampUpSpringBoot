@@ -21,16 +21,16 @@ public class GlobalExceptionHandler {
                 .body(new ApiResponse("Invalid Input for Level field" , null) );
 
     }
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Map<String,String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        Map<String, String> errors = new HashMap<>();
-        for( FieldError fieldError : ex.getBindingResult().getFieldErrors()){
-            errors.put(fieldError.getField(), fieldError.getDefaultMessage());
-        }
-        return ResponseEntity.badRequest()
-                .body(errors);
-    }
+//
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    public ResponseEntity<Map<String,String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
+//        Map<String, String> errors = new HashMap<>();
+//        for( FieldError fieldError : ex.getBindingResult().getFieldErrors()){
+//            errors.put(fieldError.getField(), fieldError.getDefaultMessage());
+//        }
+//        return ResponseEntity.badRequest()
+//                .body(errors);
+//    }
 
 
 

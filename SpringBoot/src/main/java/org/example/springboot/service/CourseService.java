@@ -1,5 +1,6 @@
 package org.example.springboot.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.example.springboot.Dtos.CourseDto;
@@ -13,18 +14,25 @@ import org.example.springboot.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class CourseService {
 
-    @Autowired
+//    @Autowired
+//    private CourseRepository courseRepository;
+
+
+    @javax.annotation.Resource(name="CourseRepository")
     private CourseRepository courseRepository;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     public List<Course> getCoursesByAuthor(Long authorId) {
         return courseRepository.findByAuthorsId(authorId);
@@ -32,7 +40,6 @@ public class CourseService {
 
     @Transactional
     public void addCourseWithSections( CourseDto courseDto) {
-
 
         Course course = new Course();
         course.setTitle(courseDto.getTitle());
@@ -85,8 +92,16 @@ public class CourseService {
     }
 
    // @Transactional
-    public  List<Course>  getCourses(){
-              return courseRepository.findAll();
+    public  List<CourseDto>  getCourses(){
+
+
+        List<Course> courses = courseRepository.findAll();
+
+        return courses.stream()
+                .map(this::convertToCourseDTO)
+                .collect(Collectors.toList());
+
+      //  return courseRepository.findAll();
     }
 
     public  List<Course> getCoursesByPages(int pageNo, int pageCount ,String sortBy,String sortOrder){
@@ -110,5 +125,7 @@ public class CourseService {
        // return  courseRepository.findByTitle("%" +title +"%");
 
     }
-
+    private CourseDto convertToCourseDTO(Course course) {
+        return objectMapper.convertValue(course, CourseDto.class);
+    }
 }

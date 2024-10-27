@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,16 +12,16 @@
         <h1>Sign in</h1>
     </div>
     <div class="form-container">
-<form th:action="@{/signin}" th:object="${user}" method="post">
+<form th:action="@{/signup}" th:object="${user}" method="post">
 
 
     <div>
         <label for="username">Username:</label>
-        <input type="text" id="username"    th:field="*{username}" />
+        <input type="text" id="username"    th:field="*{userName}" />
     </div>
     <div>
         <label for="phonenumber">Phonenumber:</label>
-        <input type="text" id="phonenumber"    th:field="*{phonenumber}" />
+        <input type="text" id="phonenumber"    th:field="*{phoneNumber}" />
     </div>
     <div>
         <label for="email">Email:</label>
@@ -34,8 +34,12 @@
     </div>
     <button type="submit">Login</button>
     <p th:text="${error}"></p>
-    <p>Already have an account? <a th:href="@{/login}">Log in</a></p>
+    <div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></div>
+    <div th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></div>
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
 
+    <p>Already have an account? <a th:href="@{/login}">Log in</a></p>
 
 </form>
 

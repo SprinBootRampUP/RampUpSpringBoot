@@ -1,5 +1,6 @@
 package org.example.springboot.controller;
 
+import jakarta.validation.Valid;
 import org.example.springboot.Dtos.ApiResponse;
 import org.example.springboot.Dtos.CourseDto;
 import org.example.springboot.Dtos.LectureDto;
@@ -14,6 +15,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,16 +25,20 @@ import java.util.Map;
 @RequestMapping("/courses")
 public class CourseController {
 
-    private final CourseService courseService;
+    @Inject
+    private  CourseService courseService;
 
     @Autowired
-    CourseController(CourseService courseService) {
-        // @Autowired
-        this.courseService = courseService;
-    }
+    private CourseService ss;
+
+//    @Autowired
+//    CourseController(CourseService courseService) {
+//        // @Autowired
+//        this.courseService = courseService;
+//    }
 
     @PostMapping
-    public ResponseEntity<ApiResponse>  createCourse(@RequestBody CourseDto courseDto) {
+    public ResponseEntity<ApiResponse>  createCourse( @Valid @RequestBody CourseDto courseDto) {
 
         try {
 
@@ -51,9 +57,9 @@ public class CourseController {
     public ResponseEntity< ApiResponse> getCourses(){
 
         try{
-            List<Course> co=courseService.getCourses();
+            List<CourseDto> courses=courseService.getCourses();
 
-            return  ResponseEntity.ok( new ApiResponse("Courses Fetched Successfully" , co));
+            return  ResponseEntity.ok( new ApiResponse("Courses Fetched Successfully" , courses));
 
 //            Map<String,List<Course>> res= new HashMap<>();
 //            res.put( "data" , co );
