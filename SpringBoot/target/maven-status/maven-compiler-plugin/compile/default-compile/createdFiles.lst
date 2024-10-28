@@ -2,7 +2,6 @@ org\example\springboot\controller\CourseController.class
 org\example\springboot\repository\CourseRepository.class
 org\example\springboot\Configuration\AppConfig.class
 org\example\springboot\controller\GlobalExceptionHandler.class
-org\example\springboot\controller\TestController.class
 org\example\springboot\Dtos\ResourceDto.class
 org\example\springboot\Dtos\SectionDto.class
 org\example\springboot\model\Resource.class
@@ -11,10 +10,10 @@ org\example\springboot\AOP\LoggingAspect.class
 org\example\springboot\service\DevService.class
 org\example\springboot\Enums\CourseLevel.class
 org\example\springboot\repository\AuthorRespository.class
+org\example\springboot\controller\LoginController.class
 org\example\springboot\service\SampleService.class
 org\example\springboot\service\CourseService.class
 org\example\springboot\model\BaseEntity.class
-org\example\springboot\controller\UserController.class
 org\example\springboot\model\Author.class
 org\example\springboot\Application.class
 org\example\springboot\model\Section.class

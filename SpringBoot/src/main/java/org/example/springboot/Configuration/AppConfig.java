@@ -41,6 +41,7 @@ public class AppConfig   {
                         .permitAll().defaultSuccessUrl("/home")
                 )
                 .logout(logout -> logout
+                        .logoutUrl("/logout")
                         .logoutSuccessUrl("/login?logout")
                         .permitAll()
                 ).sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
