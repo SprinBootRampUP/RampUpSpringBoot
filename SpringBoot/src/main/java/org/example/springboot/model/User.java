@@ -28,18 +28,11 @@ public class User {
     @Size(min = 8, max = 20, message = "Password must be within 8-20 characters")
     private String userName;
 
-    @Column(table = "user_details")
-   // @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Phone number must be between 10 and 15 digits, optionally prefixed with '+'")
-  //  @NotNull(message = "Phone number cannot be empty")
-    private String phoneNumber;
-
-  //  @Column(table = "user_details")
-  //  @NotNull(message = "Email cannot be empty")
-    private String  email;
-
-
    // @Size(min = 8, max = 20 , message = "Password must be within 8-20 characters")
   //  @NotNull(message = "Password cannot be empty")
     private String password;
+
+    private String role;
+
 
 }

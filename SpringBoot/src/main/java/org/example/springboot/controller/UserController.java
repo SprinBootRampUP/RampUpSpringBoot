@@ -83,11 +83,33 @@ public class UserController {
 
 
 
+//    @PostMapping("/signup")
+//    public String signup(@Valid @ModelAttribute("user") User user , BindingResult bindingResult){
+//        System.out.println("from signup"+user.getEmail());
+//        System.out.println("from signup"+user.getPassword());
+//        System.out.println("from signup"+user);
+//
+//        if(bindingResult.hasErrors()){
+//
+//            System.out.println("has error");
+//            return "signup";
+//        }
+//        System.out.println("NO error");
+//
+//       // model.addAttribute("error", "No user");
+//        return "redirect:/home";
+//
+//    }
+
     @PostMapping("/signup")
     public String signup(@Valid @ModelAttribute("user") User user , BindingResult bindingResult){
         System.out.println("from signup"+user.getEmail());
         System.out.println("from signup"+user.getPassword());
         System.out.println("from signup"+user);
+
+
+        userService.save(user);
+
 
         if(bindingResult.hasErrors()){
 
@@ -96,17 +118,14 @@ public class UserController {
         }
         System.out.println("NO error");
 
-       // model.addAttribute("error", "No user");
+         model.addAttribute("error", "No user ");
         return "redirect:/home";
 
     }
 
 
 
-    @GetMapping("/summa")
-    public String summa(){
-        return "summa";
-    }
+
 
 
 }
