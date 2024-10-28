@@ -65,3 +65,39 @@ Spring JDBC
 if a interface is implemented by 2 classes. and if we want to inject the interface
 spring will not know which implemtation of the class to inject.
 so use @Qualifier and specify the desired class
+
+
+Spring Expections
+
+1. Spring BeanDefinitionStoreException
+  failure in storing bean definitions in application context-configuration errors.
+
+2. Spring BeanCreationException
+  Spring fails to create a bean,issues in its constructor or dependencies.
+
+3. Spring NoSuchBeanDefinitionException
+ retrieving a bean that doesn't exist.
+
+4. Unsatisfied Dependency in Spring
+ Indicates that Spring cannot fulfill a required dependency for a bean, typically because the dependency is not defined.
+
+5. The BeanDefinitionOverrideException in Spring Boot
+ Thrown when there are multiple bean definitions with the same name
+
+6. Spring DataIntegrityViolationException
+inserting a duplicate entry into a database.
+
+7. Guide to Spring NonTransientDataAccessException
+  related to database constraints.
+
+8. Spring ResponseStatusException
+ Used to send specific HTTP status codes in response to a web request
+
+9. MaxUploadSizeExceededException in Spring
+uploaded file exceeds the maximum allowed size defined in the application configuration.
+
+10. Spring Security Exceptions
+A group of exceptions thrown during authentication and authorization failures in a Spring Security context.
+
+11. No bean named ‘springSecurityFilterChain’ is defined
+Spring Security filter chain is not defined- due to improper configuration of Spring Security.
