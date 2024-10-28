@@ -4,6 +4,7 @@ C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\CourseController.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\GlobalExceptionHandler.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\SampleController.java
+C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\TestController.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\controller\UserController.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\Demo.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\Dtos\ApiResponse.java
@@ -16,6 +17,7 @@ C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\model\Author.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\model\BaseEntity.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\model\Course.java
+C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\model\CustomUserDetails.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\model\Lecture.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\model\Resource.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\model\Section.java
@@ -28,7 +30,8 @@ C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\repository\UserRepository.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\AuthorService.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\CourseService.java
-C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\CustomUserDetailsService.java
+C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\CustomUserService.java
+C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\LoginService.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\SampleService.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\TestService.java
 C:\Users\vsharan\Documents\SprinBootRampUP\SpringBoot\src\main\java\org\example\springboot\service\UserService.java

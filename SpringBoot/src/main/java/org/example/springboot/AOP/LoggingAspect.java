@@ -1,6 +1,5 @@
 package org.example.springboot.AOP;
 
-
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
@@ -44,3 +43,4 @@ public class LoggingAspect {
 
 
 }
+

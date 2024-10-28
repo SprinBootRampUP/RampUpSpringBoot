@@ -23,7 +23,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     @NotNull(message = "Username cannot be empty")
     @Size(min = 8, max = 20, message = "Password must be within 8-20 characters")
     private String userName;
@@ -31,7 +31,7 @@ public class User {
    // @Size(min = 8, max = 20 , message = "Password must be within 8-20 characters")
   //  @NotNull(message = "Password cannot be empty")
     private String password;
-
+    private String email;
     private String role;
 
 
