@@ -101,3 +101,16 @@ A group of exceptions thrown during authentication and authorization failures in
 
 11. No bean named ‘springSecurityFilterChain’ is defined
 Spring Security filter chain is not defined- due to improper configuration of Spring Security.
+
+
+
+springSecurity
+
+    return http.csrf(customizer -> customizer.disable()).
+                authorizeHttpRequests(request -> request.anyRequest().authenticated()).
+                formLogin(form -> form.loginPage()).
+                httpBasic(Customizer.withDefaults()).
+                sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).build();
+
+
+.csrf(customizer -> customizer.disable())

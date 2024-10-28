@@ -1,10 +1,22 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Home Page</h1>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
-<h1>Home Page</h1>
+<h2>Welcome to Home Page</h2>
+<a th:href="@{/logout}">Logout</a>
 </body>
 </html>
