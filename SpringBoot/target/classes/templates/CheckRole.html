@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h2>Welcome to Home Page</h2>
+
+
+<!-- For Users -->
+<div sec:authorize="hasRole('USER')">
+    <a th:href="@{/user/profile}">Log in</a>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<!-- For Admins -->
+<div sec:authorize="hasRole('ADMIN')">
+
+    <a th:href="@{/admin/dashboard}">Log in</a>
+    <a th:href="@{/logout}">Logout</a>
+
+
+</div>
+
+<!-- For Authors -->
+<div sec:authorize="hasRole('AUTHOR')">
+
+
+    <a th:href="@{/author/add-course}">Log in</a>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>

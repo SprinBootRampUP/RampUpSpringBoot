@@ -10,6 +10,7 @@ import org.hibernate.Length;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Set;
 
 @Entity
 @Table(name = "Users")
@@ -32,7 +33,11 @@ public class User {
   //  @NotNull(message = "Password cannot be empty")
     private String password;
     private String email;
+
     private String role;
+
+
+
 
 
 }
