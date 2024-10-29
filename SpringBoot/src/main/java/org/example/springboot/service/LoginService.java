@@ -11,21 +11,19 @@ import org.springframework.stereotype.Service;
 public class LoginService {
 
     private final UserRepository userRepository;
-   // private final BCryptPasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    LoginService( UserRepository userRepository){
+    LoginService( UserRepository userRepository , PasswordEncoder passwordEncoder){
         this.userRepository=userRepository;
-        //this.passwordEncoder=passwordEncoder;
+        this.passwordEncoder=passwordEncoder;
     }
 
         public boolean register(User user) {
         if (userRepository.findByuserName(user.getUserName()).isPresent()) {
             return false;
         }
-           // user.setPassword(passwordEncoder.encode(user.getPassword()));
-            user.setPassword(user.getPassword());
-
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(user);
         return true;
     }

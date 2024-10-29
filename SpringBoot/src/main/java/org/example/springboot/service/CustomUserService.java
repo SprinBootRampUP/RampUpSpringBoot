@@ -28,11 +28,10 @@ public class CustomUserService implements UserDetailsService {
 
         System.out.printf("From here$$$$$$$$$$$$$$$$$$$$$$$$$$$");
        // return new CustomUserDetails(user);
-//        return new org.springframework.security.core.userdetails.User(
-//                user.getEmail(),
-//                user.getPassword()
-//                ,Collections.emptyList());
-        return new CustomUserDetails(user);
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(),
+                user.getPassword()
+                ,Collections.emptyList());
 
     }
 

@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-//@RequestMapping("api/courses")
+@RequestMapping("/courses")
 public class CourseController {
 
     @Inject
@@ -53,7 +53,7 @@ public class CourseController {
 
     }
 
-    @GetMapping("api/courses")
+    @GetMapping
     public ResponseEntity< ApiResponse> getCourses(){
 
         try{
