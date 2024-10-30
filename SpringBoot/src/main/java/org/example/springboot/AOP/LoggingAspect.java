@@ -20,11 +20,17 @@ public class LoggingAspect {
     @Before("PointCutMethod()")
     public void logBefore(JoinPoint joinPoint) {
 
-        logger.info(joinPoint.getSignature().getName());
+        System.out.println("logging before: name" + joinPoint.getSignature().getName());
         Object[] args = joinPoint.getArgs();
         for (Object arg : args) {
-            logger.info(arg.toString());
+            System.out.println("arg" + arg.toString());
         }
+
+//        logger.info(joinPoint.getSignature().getName());
+//        Object[] args = joinPoint.getArgs();
+//        for (Object arg : args) {
+//            logger.info(arg.toString());
+//        }
 
 
     }

@@ -16,7 +16,9 @@
     <title>Home</title>
 </head>
 <body>
-<h2>Welcome to Home Page</h2>
-<a th:href="@{/logout}">Logout</a>
+<h2>Courses</h2>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
 </body>
 </html>
